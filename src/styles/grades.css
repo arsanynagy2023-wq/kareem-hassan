@@ -1,0 +1,87 @@
+.grades{
+  min-height:100vh;
+  background:#0f172a;
+  color:white;
+  padding:80px 10%;
+}
+
+.grades-title{
+  text-align:center;
+  margin-bottom:80px;
+}
+
+.grades-title span{
+  color:#60a5fa;
+  font-size:18px;
+}
+
+.grades-title h1{
+  font-size:60px;
+  margin-top:15px;
+}
+
+.timeline{
+  position:relative;
+  max-width:900px;
+  margin:auto;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:20px;
+  top:0;
+  width:4px;
+  height:100%;
+  background:#2563eb;
+}
+
+.timeline-box{
+  display:flex;
+  gap:30px;
+  margin-bottom:50px;
+  position:relative;
+}
+
+.circle{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#2563eb;
+  flex-shrink:0;
+  z-index:2;
+}
+
+.content{
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:20px;
+  width:100%;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:.3s;
+}
+
+.content:hover{
+  transform:translateX(10px);
+  background:rgba(255,255,255,0.08);
+}
+
+.content h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.content p{
+  color:#cbd5e1;
+  line-height:1.8;
+}
+
+.content button{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:10px;
+  background:#2563eb;
+  color:white;
+  cursor:pointer;
+}

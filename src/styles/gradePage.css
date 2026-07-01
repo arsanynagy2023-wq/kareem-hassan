@@ -1,0 +1,118 @@
+.grade-page{
+
+    min-height:100vh;
+
+    background:#fffdf5;
+
+    padding:50px;
+
+}
+
+.grade-page h1{
+
+    color:#2563eb;
+
+    margin-bottom:15px;
+
+}
+
+.students-count{
+
+    color:#64748b;
+
+    font-size:20px;
+
+    margin-bottom:30px;
+
+}
+
+.search-box{
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    border:1px solid #cbd5e1;
+
+    outline:none;
+
+    margin-bottom:30px;
+
+    font-size:17px;
+
+}
+
+.students-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.students-table th{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:20px;
+
+}
+
+.students-table td{
+
+    text-align:center;
+
+    padding:18px;
+
+}
+
+.students-table tr:nth-child(even){
+
+    background:#f8fafc;
+
+}
+
+.paid-btn{
+
+    border:none;
+
+    background:#22c55e;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.delete-btn{
+
+    border:none;
+
+    background:#ef4444;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
