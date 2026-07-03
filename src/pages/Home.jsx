@@ -1,72 +1,84 @@
 import "../styles/home.css";
+import Web from "../assets/Web.png";
 
 export default function Home() {
   return (
     <div className="home">
 
-      <section className="hero">
+      <div className="hero-container">
 
-        <div className="hero-left">
+        <section className="hero">
 
-          <span className="tag">
-            #1 Math Teacher
-          </span>
+          <div className="hero-left">
 
-          <h1>
-            الأستاذ <br />
-            كريم حسن
-          </h1>
+            <span className="tag">
+              # أفضل مدرس رياضيات
+            </span>
 
-          <p>
-            مدرس الرياضيات للمرحلة الإعدادية
-            <br />
-            شرح مبسط + متابعة مستمرة + حل امتحانات
-          </p>
+            <h1>
+              الأستاذ كريم حسن
+            </h1>
 
-          <div className="hero-buttons">
+            <p>
+              شرح مبسط • متابعة مستمرة • امتحانات دورية •
+              أفضل تجربة تعليمية للمرحلة الإعدادية
+            </p>
 
-            <a href="/register">
-              <button className="start-btn">
-                سجل الآن
-              </button>
-            </a>
+            <div className="hero-buttons">
 
-            <a href="/courses">
-              <button className="courses-btn">
-                الكورسات
-              </button>
-            </a>
+              <a href="/register">
+                <button className="start-btn">
+                  سجل الآن
+                </button>
+              </a>
 
-          </div>
+              <a href="/courses">
+                <button className="courses-btn">
+                  الكورسات
+                </button>
+              </a>
 
-        </div>
-
-        <div className="hero-right">
-
-          <div className="glass-card">
-
-            <h2>+500</h2>
-            <p>طالب متفوق</p>
+            </div>
 
           </div>
 
-          <div className="glass-card">
+          <div className="hero-right">
 
-            <h2>100%</h2>
-            <p>متابعة واهتمام</p>
+            <img
+              src={Web}
+              alt="Math"
+              className="hero-image"
+            />
 
           </div>
 
-        </div>
+        </section>
 
-      </section>
+        <section className="stats">
 
-      <a
-        href="tel:01009337554"
-        className="call-bubble"
-      >
-        😊 Call Us
-      </a>
+          <div className="stat-card">
+            <h2>500+</h2>
+            <p>طالب</p>
+          </div>
+
+          <div className="stat-card">
+            <h2>98%</h2>
+            <p>نسبة النجاح</p>
+          </div>
+
+          <div className="stat-card">
+            <h2>3</h2>
+            <p>صفوف دراسية</p>
+          </div>
+
+          <div className="stat-card">
+            <h2>24/7</h2>
+            <p>متابعة</p>
+          </div>
+
+        </section>
+
+      </div>
 
     </div>
   );

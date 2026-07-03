@@ -29,22 +29,22 @@ export default function Register() {
       !gender ||
       !time
     ) {
-      setError("Please fill all fields");
+      setError("برجاء إدخال جميع البيانات المطلوبة");
       return;
     }
 
     if (!arabicRegex.test(firstName)) {
-      setError("First name must be in Arabic");
+      setError("الاسم الأول يجب أن يكون باللغة العربية");
       return;
     }
 
     if (!arabicRegex.test(lastName)) {
-      setError("Second name must be in Arabic");
+      setError("الاسم الثاني يجب أن يكون باللغة العربية");
       return;
     }
 
     if (!/^\d{11}$/.test(phone)) {
-      setError("Phone number must be 11 digits");
+      setError("رقم الهاتف يجب أن يتكون من 11 رقم");
       return;
     }
 
@@ -73,7 +73,9 @@ export default function Register() {
       const data = await response.json();
 
       if (!response.ok) {
-        setError(data.message || "Registration failed");
+        setError(
+          data.message || "فشل التسجيل"
+        );
         setLoading(false);
         return;
       }
@@ -83,7 +85,7 @@ export default function Register() {
         JSON.stringify(data.student)
       );
 
-      alert("Registration completed successfully 🔥");
+      alert("تم التسجيل بنجاح ✅");
 
       navigate("/dashboard");
 
@@ -92,7 +94,7 @@ export default function Register() {
       console.log(err);
 
       setError(
-        "Cannot connect to backend server"
+        "تعذر الاتصال بالسيرفر"
       );
 
     } finally {
@@ -103,98 +105,171 @@ export default function Register() {
   };
 
   return (
+
     <section className="register">
 
       <div className="register-box">
 
-        <h1>Student Registration</h1>
+        <h1>
+          تسجيل الطلاب
+        </h1>
 
         <p>
-          Reserve your place now with Mr. Kareem Hassan
+          احجز مكانك الآن مع الأستاذ كريم حسن
         </p>
 
         {
           error &&
           <div className="error-box">
+            <span>❌</span>
             {error}
           </div>
         }
 
         <div className="input-box no-arrow">
+
           <input
             type="text"
             value={firstName}
-            onChange={(e) =>
-              setFirstName(e.target.value)
+            onChange={(e)=>
+              setFirstName(
+                e.target.value
+              )
             }
+            required
           />
-          <label>First Name</label>
+
+          <label>
+            الاسم الأول
+          </label>
+
         </div>
 
         <div className="input-box no-arrow">
+
           <input
             type="text"
             value={lastName}
-            onChange={(e) =>
-              setLastName(e.target.value)
+            onChange={(e)=>
+              setLastName(
+                e.target.value
+              )
             }
+            required
           />
-          <label>Second Name</label>
+
+          <label>
+            الاسم الثاني
+          </label>
+
         </div>
 
         <div className="input-box no-arrow">
+
           <input
             type="text"
             maxLength={11}
             value={phone}
-            onChange={(e) => {
+            onChange={(e)=>{
+
               const value =
-                e.target.value.replace(/\D/g, "");
+              e.target.value.replace(
+                /\D/g,
+                ""
+              );
+
               setPhone(value);
+
             }}
+            required
           />
-          <label>Phone Number</label>
+
+          <label>
+            رقم الهاتف
+          </label>
+
         </div>
 
         <div className="input-box">
+
           <select
             value={grade}
-            onChange={(e) => {
-              setGrade(e.target.value);
+            onChange={(e)=>{
+
+              setGrade(
+                e.target.value
+              );
+
               setTime("");
+
             }}
+            required
           >
+
             <option value=""></option>
-            <option>First Prep</option>
-            <option>Second Prep</option>
-            <option>Third Prep</option>
+
+            <option>
+              First Prep
+            </option>
+
+            <option>
+              Second Prep
+            </option>
+
+            <option>
+              Third Prep
+            </option>
+
           </select>
 
-          <label>Grade</label>
+          <label>
+            الصف الدراسي
+          </label>
+
         </div>
 
         <div className="input-box">
+
           <select
             value={gender}
-            onChange={(e) =>
-              setGender(e.target.value)
+            onChange={(e)=>
+              setGender(
+                e.target.value
+              )
             }
+            required
           >
+
             <option value=""></option>
-            <option>Male</option>
-            <option>Female</option>
+
+            <option>
+              Male
+            </option>
+
+            <option>
+              Female
+            </option>
+
           </select>
 
-          <label>Gender</label>
+          <label>
+            النوع
+          </label>
+
         </div>
 
         <div className="input-box">
+
           <select
             value={time}
-            onChange={(e) =>
-              setTime(e.target.value)
+            onChange={(e)=>
+              setTime(
+                e.target.value
+              )
             }
+            required
           >
+
             <option value=""></option>
 
             {
@@ -228,22 +303,29 @@ export default function Register() {
 
           </select>
 
-          <label>Time</label>
+          <label>
+            موعد الحصة
+          </label>
+
         </div>
 
         <button
           onClick={handleRegister}
           disabled={loading}
         >
+
           {
             loading
-              ? "Registering..."
-              : "Register Now"
+            ? "جاري التسجيل..."
+            : "تسجيل الآن"
           }
+
         </button>
 
       </div>
 
     </section>
+
   );
+
 }

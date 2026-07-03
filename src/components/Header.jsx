@@ -2,71 +2,35 @@ import { Link } from "react-router-dom";
 import "../styles/header.css";
 
 export default function Header() {
-
-  const students =
-    JSON.parse(sessionStorage.getItem("students")) || [];
-
-  const hasStudents = students.length > 0;
-
   return (
+    <header className="header-wrapper">
 
-    <nav className="navbar">
+      <nav className="navbar">
 
-      <Link
-        to="/admin-login"
-        className="logo"
-      >
-        Kareem Hassan
-      </Link>
+        <div className="logo-box">
+          <div className="math-logo">√x</div>
 
-      <ul className="nav-links">
+          <div>
+            <h2>Mr. Kareem</h2>
+            <span>Math Teacher</span>
+          </div>
+        </div>
 
-        <li>
-          <Link to="/">
-            Home
-          </Link>
-        </li>
+        <ul className="nav-links">
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/courses">Courses</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/register">Register</Link></li>
+        </ul>
 
-        <li>
-          <Link to="/about">
-            About
-          </Link>
-        </li>
+        <div className="lang-buttons">
+          <button>AR</button>
+          <button>EN</button>
+        </div>
 
-        <li>
-          <Link to="/courses">
-            Courses
-          </Link>
-        </li>
+      </nav>
 
-        <li>
-          <Link to="/grades">
-            Grades
-          </Link>
-        </li>
-
-        {hasStudents && (
-
-          <li className="status-link">
-
-            <Link to="/dashboard">
-              Status
-            </Link>
-
-          </li>
-
-        )}
-
-        <li>
-          <Link to="/register">
-            Register
-          </Link>
-        </li>
-
-      </ul>
-
-    </nav>
-
+    </header>
   );
-
 }

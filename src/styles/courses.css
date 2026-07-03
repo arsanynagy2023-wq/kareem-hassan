@@ -1,52 +1,73 @@
 .courses{
-  min-height:100vh;
-  background:#020617;
-  color:white;
-  padding:80px 10%;
+    min-height:100vh;
+
+    width:90%;
+    max-width:1400px;
+
+    margin:auto;
+
+    padding-top:140px;
 }
 
 .courses h1{
-  text-align:center;
-  font-size:60px;
-  margin-bottom:50px;
+    text-align:center;
+    font-size:60px;
+    color:#111827;
+    margin-bottom:50px;
 }
 
 .courses-container{
-  display:flex;
-  gap:30px;
-  justify-content:center;
-  flex-wrap:wrap;
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
 }
 
 .course-card{
-  width:320px;
-  padding:35px;
-  border-radius:25px;
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.08);
-  transition:.3s;
+    background:white;
+
+    border-radius:30px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
 }
 
 .course-card:hover{
-  transform:translateY(-10px);
+    transform:translateY(-10px);
 }
 
 .course-card h2{
-  font-size:35px;
+    color:#111827;
+    font-size:35px;
 }
 
 .course-card p{
-  margin:20px 0;
-  color:#cbd5e1;
-  line-height:1.8;
+    color:#6b7280;
+    margin:25px 0;
 }
 
 .course-card button{
-  width:100%;
-  padding:15px;
-  border:none;
-  border-radius:12px;
-  background:#2563eb;
-  color:white;
-  cursor:pointer;
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#d4a04b;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
 }
