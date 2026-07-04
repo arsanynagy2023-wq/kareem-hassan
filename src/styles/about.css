@@ -1,27 +1,17 @@
 .about{
     min-height:100vh;
-
-    width:90%;
-    max-width:1400px;
-
-    margin:auto;
-
-    padding-top:140px;
-
-    display:flex;
-    align-items:center;
+    background:#F8F5EF;
+    padding:140px 20px 50px;
 }
 
 .about-container{
-    width:100%;
+    max-width:1200px;
+    margin:auto;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     gap:60px;
-
-    flex-wrap:wrap;
 }
 
 .about-text{
@@ -29,51 +19,53 @@
 }
 
 .about-text span{
-    color:#d4a04b;
-    font-size:18px;
-    font-weight:700;
+    color:#8B5E3C;
+    font-weight:bold;
 }
 
 .about-text h1{
     font-size:60px;
-    color:#111827;
+    color:#8B5E3C;
     margin:20px 0;
 }
 
 .about-text p{
-    font-size:20px;
-    line-height:1.8;
-    color:#6b7280;
+    color:#666;
+    line-height:2;
 }
 
 .about-box{
     flex:1;
-
     display:flex;
-    gap:25px;
-
-    flex-wrap:wrap;
+    gap:20px;
 }
 
 .info-card{
-    width:220px;
-
+    flex:1;
     background:white;
-
+    padding:40px;
     border-radius:25px;
-
-    padding:35px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
     text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 .info-card h2{
+    color:#8B5E3C;
     font-size:45px;
-    color:#d4a04b;
 }
 
-.info-card p{
-    color:#6b7280;
+@media(max-width:768px){
+
+    .about-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .about-text h1{
+        font-size:40px;
+    }
+
+    .about-box{
+        width:100%;
+    }
 }
