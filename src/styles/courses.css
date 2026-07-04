@@ -44,3 +44,15 @@
     border-radius:15px;
     cursor:pointer;
 }
+@media(max-width:768px){
+
+  .courses{
+    padding-top:280px;
+  }
+
+  .courses-container{
+    display:flex;
+    flex-direction:column;
+  }
+
+}

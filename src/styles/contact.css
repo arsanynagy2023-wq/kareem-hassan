@@ -56,3 +56,20 @@
         font-size:38px;
     }
 }
+@media(max-width:768px){
+
+  .contact{
+    padding-top:280px;
+  }
+
+  .contact-cards{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .contact-card{
+    width:100%;
+  }
+
+}

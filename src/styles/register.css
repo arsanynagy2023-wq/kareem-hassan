@@ -240,3 +240,14 @@
     font-size:16px;
   }
 }
+@media(max-width:768px){
+
+  .register{
+    padding-top:280px;
+  }
+
+  .register-box{
+    padding:30px 20px;
+  }
+
+}
