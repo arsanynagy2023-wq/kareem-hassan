@@ -3,6 +3,9 @@ const Student = require("../models/Student");
 
 const router = express.Router();
 
+// =========================
+// Register Student
+// =========================
 router.post("/register", async (req, res) => {
 
     try {
@@ -16,17 +19,34 @@ router.post("/register", async (req, res) => {
             time
         } = req.body;
 
-        const existingStudent =
-        await Student.findOne({ phone });
+        // التحقق من البيانات
+        if (
+            !firstName ||
+            !lastName ||
+            !phone ||
+            !grade ||
+            !gender ||
+            !time
+        ) {
+            return res.status(400).json({
+                message: "All fields are required"
+            });
+        }
 
-        if(existingStudent){
+        // هل الطالب مسجل بالفعل؟
+        const existingStudent = await Student.findOne({
+            phone: phone
+        });
+
+        if (existingStudent) {
 
             return res.status(400).json({
-                message:"Student already exists"
+                message: "Student already exists"
             });
 
         }
 
+        // إنشاء طالب جديد
         const student = new Student({
 
             firstName,
@@ -40,42 +60,52 @@ router.post("/register", async (req, res) => {
 
         await student.save();
 
-        res.status(201).json({
-            message:"Student registered successfully",
+        return res.status(201).json({
+
+            message: "Student registered successfully",
             student
+
         });
 
-    }
+    } catch (error) {
 
-    catch(error){
-
+        console.log("================================");
+        console.log("❌ ERROR INSIDE REGISTER ROUTE");
         console.log(error);
+        console.log("Name:", error.name);
+        console.log("Message:", error.message);
+        console.log("Errors:", error.errors);
+        console.log("Stack:");
+        console.log(error.stack);
+        console.log("================================");
 
-        res.status(500).json({
-            message:"Server Error"
+        return res.status(500).json({
+            message: error.message
         });
 
     }
 
 });
 
-router.get("/", async (req,res)=>{
+// =========================
+// Get All Students
+// =========================
+router.get("/", async (req, res) => {
 
-    try{
+    try {
 
-        const students =
-        await Student.find().sort({
-            createdAt:-1
+        const students = await Student.find().sort({
+            createdAt: -1
         });
 
-        res.json(students);
+        return res.json(students);
 
-    }
+    } catch (error) {
 
-    catch(error){
+        console.log(error);
 
-        res.status(500).json({
-            message:"Server Error"
+        return res.status(500).json({
+            message: error.message
         });
 
     }
