@@ -1,5 +1,5 @@
 import "../styles/home.css";
-import Web from "../assets/Web.jpg";
+import Web from "../assets/web.jpg";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -50,7 +50,7 @@ export default function Home() {
           <div className="image-circle">
 
             <img
-              src={Web}
+              src={web}
               alt="Math Teacher"
               className="hero-image"
             />
